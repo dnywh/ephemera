@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.gallery {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: space-between;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.gallery > figure {
+  flex-basis: 45vw;
+  transform-origin: bottom left;
+  margin-bottom: 3em;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+@media only screen and (min-width: 640px) {
+  .gallery > figure {
+    flex-basis: 16vw;
+  }
+}
