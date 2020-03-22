@@ -11,6 +11,15 @@
 # ~Compressed via ImageOptim~
 # ~Maximum dimension of 1800px~
 
+- happy-news:
+  name: Happy News
+  date: 2020-02-23 19:00:00 +1100
+  location: Wollstonecraft, NSW
+  tags:
+    - packaging
+    - food
+    - fortune
+
 - delta-tpa-jfk-july-2019:
   name: New York to Tampa
   date: 2019-07-06 19:15:00 -0400
