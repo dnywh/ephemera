@@ -11,6 +11,14 @@
 # ~Compressed via ImageOptim~
 # ~Maximum dimension of 1800px~
 
+- stanton-hold:
+  name: Stanton Library
+  date: 2020-01-01 12:00:00 +1100
+  location: Stanton Library, North Sydney, NSW
+  tags:
+    - receipt
+    - library
+
 - happy-news:
   name: Happy News
   date: 2020-02-23 19:00:00 +1100
@@ -19,6 +27,38 @@
     - packaging
     - food
     - fortune
+
+- a-little-something-to-keep-in-your-wallet:
+  name: A little something to keep in your wallet
+  date: 2019-09-30 12:00:00 -0400
+  location: Astoria, NY
+  tags:
+    - doodle
+    - card
+    - lexi
+
+- critical-mass:
+  name: Critical Mass
+  date: 2019-09-20 12:00:00 -0400
+  location: Union Square, NY
+  tags:
+    - flyer
+
+- guggenheim-ticket:
+  name: Guggenheim ticket
+  date: 2019-09-14 11:30:00 -0400
+  location: Solomon R. Guggenheim Museum, NY
+  tags:
+    - ticket
+    - lexi
+
+- daily-show-ticket:
+  name: The Daily Show ticket
+  date: 2019-09-09 17:00:00 -0400
+  location: New York, NY
+  tags:
+    - ticket
+    - lexi
 
 - delta-tpa-jfk-july-2019:
   name: New York to Tampa
@@ -1162,3 +1202,11 @@
   location: Astoria, NY
   tags:
     - ticket
+
+- a-look-at-sticker:
+  name: A Look At sticker
+  date: 2019-05-01 12:00:00 -0400
+  location: Bedford-Stuyvesant, NY
+  tags:
+    - sticker
+    - doodle
