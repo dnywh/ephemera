@@ -32,6 +32,7 @@
   name: A little something to keep in your wallet
   date: 2019-09-30 12:00:00 -0400
   location: Astoria, NY
+  format: png
   tags:
     - doodle
     - card
