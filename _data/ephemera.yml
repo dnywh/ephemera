@@ -53,6 +53,15 @@
     - ticket
     - lexi
 
+- bingo-card:
+  name: Bingo card
+  date: 2019-09-10 21:30:00 -0400
+  location: Madame Marie's, Astoria, NY
+  format: png
+  tags:
+    - ticket
+    - lexi
+
 - daily-show-ticket:
   name: The Daily Show ticket
   date: 2019-09-09 17:00:00 -0400
@@ -965,6 +974,20 @@
   tags:
     - movie
 
+- mushroom-park-front:
+  name: Mushroom Park postcard front
+  date: 2018-01-07 09:00:00 -0400
+  location: Kickstarter New York
+  tags:
+    - kickstarter
+
+- mushroom-park-back:
+  name: Mushroom Park postcard back
+  date: 2018-01-07 09:00:00 -0400
+  location: Kickstarter New York
+  tags:
+    - kickstarter
+
 - mount-sinai:
   name: Mount Sinai
   date: 2018-01-02 09:00:00 -0400
@@ -1204,9 +1227,24 @@
   tags:
     - ticket
 
+- brand-new-conference:
+  name: Brand New Conference
+  date: 2016-09-15 13:30:00 -0500
+  location: Nashville, TN
+  tags:
+    - badge
+  
+- temple-football-game:
+  name: Temple Owls vs Penn State
+  date: 2015-09-05 15:30:00 -0400
+  location: Lincoln Financial Field, Philadelphia, PA
+  tags:
+    - ticket
+    - football
+
 - a-look-at-sticker:
   name: A Look At sticker
-  date: 2019-05-01 12:00:00 -0400
+  date: 2015-05-01 12:00:00 -0400
   location: Bedford-Stuyvesant, NY
   tags:
     - sticker
