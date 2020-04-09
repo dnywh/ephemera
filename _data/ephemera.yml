@@ -38,6 +38,22 @@
     - card
     - lexi
 
+- nypl-card:
+  name: NYPL Card
+  date: 2019-09-09 17:00:00 -0400
+  location: New York, NY
+  tags:
+    - card
+    - keychain
+
+- the-cliffs-card:
+  name: The Cliffs Card
+  date: 2019-09-09 17:00:00 -0400
+  location: New York, NY
+  tags:
+    - card
+    - keychain
+
 - critical-mass:
   name: Critical Mass
   date: 2019-09-20 12:00:00 -0400
@@ -677,6 +693,13 @@
   tags:
     - badge
 
+- loupe-2018-sticker:
+  name: Loupe 2018 Sticker
+  date: 2018-09-20 09:00:00 -0400
+  location: Amsterdam Noord, Netherlands
+  tags:
+    - sticker
+
 - tonys-chocolonely:
   name: Tony's Chocolonely
   date: 2018-09-19 09:00:00 -0400
@@ -829,6 +852,17 @@
     - hiking
     - camping
     - climbing
+
+- access-fund:
+  name: Access Fund
+  date: 2018-06-09 09:00:00 -0400
+  location: Mohonk Preserve, NY
+  tags:
+    - nature
+    - hiking
+    - camping
+    - climbing
+    - keychain
 
 - no-postcard:
   name: Dear Secretary Zinke
@@ -1233,13 +1267,21 @@
   location: Nashville, TN
   tags:
     - badge
-  
+
 - temple-football-game:
   name: Temple Owls vs Penn State
   date: 2015-09-05 15:30:00 -0400
   location: Lincoln Financial Field, Philadelphia, PA
   tags:
     - ticket
+    - football
+  
+- super-bowl-photo-booth:
+  name: Super Bowl photo booth
+  date: 2015-02-07 15:30:00 -0400
+  location: Union Hall, Brooklyn, NY
+  tags:
+    - photo
     - football
 
 - a-look-at-sticker:
