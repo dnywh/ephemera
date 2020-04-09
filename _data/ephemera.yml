@@ -50,6 +50,7 @@
   name: The Cliffs Card
   date: 2019-09-09 17:00:00 -0400
   location: New York, NY
+  format: png
   tags:
     - card
     - keychain
@@ -697,6 +698,7 @@
   name: Loupe 2018 Sticker
   date: 2018-09-20 09:00:00 -0400
   location: Amsterdam Noord, Netherlands
+  format: png
   tags:
     - sticker
 
@@ -857,6 +859,7 @@
   name: Access Fund
   date: 2018-06-09 09:00:00 -0400
   location: Mohonk Preserve, NY
+  format: png
   tags:
     - nature
     - hiking
