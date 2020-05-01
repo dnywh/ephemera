@@ -11,29 +11,12 @@ async function getData() {
     // Make an item
     const item = document.createElement("li");
 
+    // Foreground
+    const itemForeground = document.createElement("div");
+    // Background
+    const itemBackground = document.createElement("div");
+
     // Add elements to the item
-    // Item name (required)
-    const itemName = document.createElement("h2");
-    itemName.textContent = element.fields.name;
-    item.appendChild(itemName);
-
-    // Item date (required)
-    const itemDate = document.createElement("p");
-    itemDate.textContent = element.fields.date;
-    item.appendChild(itemDate);
-
-    // Item venue (optional)
-    if (element.fields.venue) {
-      const itemVenue = document.createElement("p");
-      itemVenue.textContent = element.fields.venue;
-      item.appendChild(itemVenue);
-    }
-
-    // Item location (required)
-    const itemLocation = document.createElement("p");
-    itemLocation.textContent = element.fields.location;
-    item.appendChild(itemLocation);
-
     // Item image
     // if (element.fields.image) {
     const itemImage = document.createElement("img");
@@ -43,7 +26,37 @@ async function getData() {
     item.appendChild(itemImage);
     // }
 
+    // Item name (required)
+    const itemName = document.createElement("h2");
+    itemName.textContent = element.fields.name;
+    itemForeground.appendChild(itemName);
+
+    // Item date (required)
+    const itemDate = document.createElement("p");
+    itemDate.textContent = element.fields.date;
+    itemForeground.appendChild(itemDate);
+
+    // Item venue (optional)
+    if (element.fields.venue) {
+      const itemVenue = document.createElement("p");
+      itemVenue.textContent = element.fields.venue;
+      itemForeground.appendChild(itemVenue);
+    }
+
+    // Item location (required)
+    const itemLocation = document.createElement("p");
+    itemLocation.textContent = element.fields.location;
+    itemForeground.appendChild(itemLocation);
+
+    // Item country (soon to be required)
+    if (element.fields.country) {
+      const itemCountry = document.createElement("p");
+      itemCountry.textContent = element.fields.country;
+      itemForeground.appendChild(itemCountry);
+    }
+
     // Add item to the DOM
+    item.appendChild(itemForeground);
     list.appendChild(item);
   });
 }
