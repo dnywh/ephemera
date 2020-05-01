@@ -57,9 +57,9 @@ async function getData() {
     // }
 
     // Item name (required)
-    const itemName = document.createElement("h3");
-    itemName.textContent = element.fields.name;
-    itemForeground.appendChild(itemName);
+    // const itemName = document.createElement("h3");
+    // itemName.textContent = element.fields.name;
+    // itemForeground.appendChild(itemName);
 
     // Item date (required)
     const itemDate = document.createElement("p");

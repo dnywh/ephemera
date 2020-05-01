@@ -5,6 +5,6 @@ A digital archive of analogue bits and bobs.
 ## Running locally
 
 ```
-npm setup
+npm start
 npm run scss
 ```
