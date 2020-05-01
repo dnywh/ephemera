@@ -16,21 +16,35 @@ async function getData() {
     // Add elements to the item
     // Item name (required)
     const itemName = document.createElement("h2");
-    itemName.textContent = element.fields.Name;
+    itemName.textContent = element.fields.name;
     item.appendChild(itemName);
 
+    // Item date (required)
+    const itemDate = document.createElement("p");
+    itemDate.textContent = element.fields.date;
+    item.appendChild(itemDate);
+
+
+
+    // Item location (required)
+    const itemLocation = document.createElement("p");
+    itemLocation.textContent = element.fields.location;
+    item.appendChild(itemLocation);
+
     // Item venue (optional)
-    if (element.fields.Venue) {
-      const itemVenue = document.createElement("p");
-      itemVenue.textContent = element.fields.Venue;
-      item.appendChild(itemVenue);
-    }
+    // if (element.fields.venue) {
+    //   const itemVenue = document.createElement("p");
+    //   itemVenue.textContent = element.fields.venue;
+    //   item.appendChild(itemVenue);
+    // }
     // Item image
-    const itemImage = document.createElement("img");
-    const imageUrl = element.fields.Image[0].url;
-    // const thumbnailUrl = element.fields.Image[0].thumbnails.large.url;
-    itemImage.src = imageUrl;
-    item.appendChild(itemImage);
+    // if (element.fields.image[0].url) {
+    //   const itemImage = document.createElement("img");
+    //   const imageUrl = element.fields.image[0].url;
+    //   // const thumbnailUrl = element.fields.Image[0].thumbnails.large.url;
+    //   itemImage.src = imageUrl;
+    //   item.appendChild(itemImage);
+    // }
 
     // Add item to the DOM
     list.appendChild(item);

@@ -20,33 +20,37 @@ app.use(express.static("public"));
 //   response.sendFile(__dirname + "/public/index.html");
 // });
 
-console.log(base);
-const table = "Table 1";
-const view = "Grid";
+const table = "Main";
+const recordsFromAllPages = [];
 
 app.get("/data", async (request, response) => {
   base(table)
-    .select({})
+    .select({
+      view: "By Date",
+      // filterByFormula: "NOT({country} = '')",
+    })
     .eachPage(
       function page(records, fetchNextPage) {
         // This function (`page`) will get called for each page of records.
 
         records.forEach(function (record) {
-          console.log("Retrieved: ", record.get("Name"));
-          
+          console.log("Retrieved: ", record.get("name"));
+          recordsFromAllPages.push(record);
         });
 
         // To fetch the next page of records, call `fetchNextPage`.
         // If there are more records, `page` will get called again.
         // If there are no more records, `done` will get called.
         fetchNextPage();
-        response.json(records);
+        // response.json(records);
       },
       function done(err) {
         if (err) {
           console.error(err);
           return;
         }
+
+        response.json(recordsFromAllPages);
       }
     );
 });
