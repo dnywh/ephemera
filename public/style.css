@@ -1,0 +1,7 @@
+ul {
+  padding: 0; }
+  ul li {
+    list-style-type: none; }
+
+image {
+  max-width: 100%; }

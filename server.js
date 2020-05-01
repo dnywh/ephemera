@@ -27,7 +27,7 @@ app.get("/data", async (request, response) => {
   base(table)
     .select({
       view: "By Date",
-      // filterByFormula: "NOT({country} = '')",
+      filterByFormula: "NOT({image} = '')",
     })
     .eachPage(
       function page(records, fetchNextPage) {

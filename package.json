@@ -6,11 +6,13 @@
   "dependencies": {
     "airtable": "^0.8.1",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "node-sass": "^4.14.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss -o public",
     "start": "node -r dotenv/config server.js"
   },
   "repository": {
