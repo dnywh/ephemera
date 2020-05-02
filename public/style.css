@@ -1,3 +1,12 @@
+:root {
+  --tile-width: 50vw;
+  --tile-padding: 2vw; }
+
+@media screen and (min-width: 768px) {
+  :root {
+    --tile-width: 25vw;
+    --tile-padding: 4vw; } }
+
 @font-face {
   font-family: "JetBrains Mono";
   src: url("https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/web/eot/JetBrainsMono-Regular.eot") format("embedded-opentype"), url("https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/web/woff2/JetBrainsMono-Regular.woff2") format("woff2"), url("https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/web/woff/JetBrainsMono-Regular.woff") format("woff"), url("https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/ttf/JetBrainsMono-Regular.ttf") format("truetype");
@@ -11,6 +20,7 @@
   font-style: normal; }
 
 * {
+  font-feature-settings: "liga" on, "calt" on;
   -webkit-font-feature-settings: "liga" on, "calt" on;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -28,8 +38,8 @@ ul {
   flex-wrap: wrap; }
   ul li {
     list-style-type: none;
-    width: 25vw;
-    height: 25vw;
+    width: var(--tile-width);
+    height: var(--tile-width);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -38,16 +48,23 @@ ul {
       cursor: pointer; }
     ul li img,
     ul li div {
-      padding: 4vw; }
+      padding: var(--tile-padding); }
     ul li img {
       object-fit: contain;
       width: 100%;
       height: 100%; }
+      ul li img.lazyload {
+        opacity: 0; }
+      ul li img.lazyloading {
+        filter: blur(12px);
+        opacity: 1; }
+      ul li img.lazyloaded {
+        filter: blur(0); }
     ul li div {
       position: absolute;
-      width: 25vw;
-      height: 25vw;
-      padding: 4vw;
+      width: var(--tile-width);
+      height: var(--tile-width);
+      padding: var(--tile-padding);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -57,11 +74,7 @@ ul {
       opacity: 1; }
 
 h2 {
-  font-size: 3rem; }
-
-h3 {
-  font-size: 1.15rem;
-  margin: 0 0 0.25rem 0; }
+  font-size: 4vw; }
 
 p {
   font-size: 0.8rem;

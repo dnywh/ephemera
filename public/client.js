@@ -48,14 +48,13 @@ async function getData() {
 
     // Add elements to the item
     // Item image
-    // if (element.fields.images) {
     const itemImage = document.createElement("img");
+    itemImage.classList.add("lazyload");
     const imageUrl = element.fields.images[0].url;
     const thumbnailUrl = element.fields.images[0].thumbnails.small.url;
     itemImage.src = thumbnailUrl;
     itemImage.setAttribute("data-src", imageUrl);
     item.appendChild(itemImage);
-    // }
 
     // Item name (required)
     // const itemName = document.createElement("h3");
