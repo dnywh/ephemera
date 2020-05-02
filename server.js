@@ -27,8 +27,9 @@ app.get("/data", async (request, response) => {
 
   base(table)
     .select({
-      view: "By Date",
-      filterByFormula: "NOT({image} = '')",
+      view: "Grid",
+      filterByFormula: "({hidden}= '')", // Only show items that are not hidden
+      sort: [{ field: "date", direction: "desc" }], // Overrides what's set in the above view, just in case I forget
     })
     .eachPage(
       function page(records, fetchNextPage) {

@@ -48,11 +48,12 @@ async function getData() {
 
     // Add elements to the item
     // Item image
-    // if (element.fields.image) {
+    // if (element.fields.images) {
     const itemImage = document.createElement("img");
-    const imageUrl = element.fields.image[0].url;
-    // const thumbnailUrl = element.fields.image[0].thumbnails.small.url;
-    itemImage.src = imageUrl;
+    const imageUrl = element.fields.images[0].url;
+    const thumbnailUrl = element.fields.images[0].thumbnails.small.url;
+    itemImage.src = thumbnailUrl;
+    itemImage.setAttribute("data-src", imageUrl);
     item.appendChild(itemImage);
     // }
 
