@@ -1,3 +1,5 @@
+![sample](https://user-images.githubusercontent.com/3104761/80896885-7346ed80-8d36-11ea-961f-59fee197bb59.jpg)
+
 # Ephemera
 
 You know those scraps of paper and receipts that clog up your wallet and pockets? This is a living, digital archive of that.
@@ -35,7 +37,8 @@ Follow these instructions if you want to recreate or build something similar usi
 
 Your [localhost:3000](http://localhost:3000) should now be serving Ephemera.
 
-Having issues? Check that:
+### Having issues?
+Check that:
 
 - ...all the Node modules were installed (I'm assuming `npm start` does that, but could be wrong)
 - ...your API key and Base ID are correct
