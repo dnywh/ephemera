@@ -104,8 +104,10 @@ async function getData() {
     list.appendChild(item);
   });
 
-  // Build graph at top
-  allYearsAndMonth.forEach(function (x) { counts[x] = (counts[x] || 0) + 1 });
+  // Build timeline graph
+  // Flip order of years and months
+  reversedAllYearsAndMonth = allYearsAndMonth.reverse()
+  reversedAllYearsAndMonth.forEach(function (x) { counts[x] = (counts[x] || 0) + 1 });
   for (const [key, value] of Object.entries(counts)) {
     // Create an element for each unique month value
     const dateColumn = document.createElement("li");
