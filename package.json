@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dannyalright/ephemera.git"
+    "url": "git+https://github.com/dnywh/ephemera.git"
   },
   "keywords": [
     "ephemera",
@@ -30,7 +30,7 @@
   "author": "Danny White",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dannyalright/ephemera/issues"
+    "url": "https://github.com/dnywh/ephemera/issues"
   },
-  "homepage": "https://github.com/dannyalright/ephemera#readme"
+  "homepage": "https://github.com/dnywh/ephemera#readme"
 }
