@@ -5,8 +5,11 @@ async function getData() {
   const json = await response.json();
   // console.log(json);
 
-  // Get the DOM list container to eventuall yplace each data item within
+  // Get the DOM list container to eventually place each data item within
   const list = document.getElementById("list");
+
+  // Get the DOM list container to make the graph
+  const graph = document.getElementById("graph");
 
   // TODO: instead of the below manually parsing of years,
   // automatically go through json and split by year like:
@@ -20,11 +23,51 @@ async function getData() {
 
   // Prepare array for years
   const elementYears = [];
+  // Prepare array for months
+  const allYearsAndMonth = [];
+
+  // console.log(json);
+
+  // const test = json.reduce(function (accumulator, current) {
+  //   return accumulator.concat(current);
+  // })
+  // console.log(test);
+
+  // const tempList = json.map(function (date, index, array) {
+  //   console.log(index.fields.date);
+  // });
+  const counts = {};
+
 
   // Go through each item
   json.forEach((element) => {
     // Access year
     const itemYear = element.fields.date.substring(0, 4);
+
+    const elementYearAndMonth = element.fields.date.substring(0, 7);
+    allYearsAndMonth.push(elementYearAndMonth);
+
+
+    // console.log(allYearsAndMonth);
+
+
+
+
+    // 👇
+    // Get all raw dates
+    // console.log(element.fields.date);
+    // Simplify into months (Sept 18, Oct 18, Nov, 18, Dec 18, Jan 19)
+    // const tempList = 
+    // Count how many 'duplicates' are in each of those months
+    // Use that duplicate number to determine height of li element
+
+    // Scratchpad:
+
+
+
+    // 🖕
+    // Normal stuff:
+
     if (!elementYears.includes(itemYear)) {
       // Make an item
       const itemYearBlock = document.createElement("li");
@@ -37,6 +80,8 @@ async function getData() {
       // Push to array so it doesn't get repeated
       elementYears.push(itemYear);
     }
+
+
 
     // Make an item
     const item = document.createElement("li");
@@ -89,5 +134,31 @@ async function getData() {
     item.appendChild(itemForeground);
     list.appendChild(item);
   });
+
+  // console.log(elementYears);
+  allYearsAndMonth.forEach(function (x) { counts[x] = (counts[x] || 0) + 1 });
+  console.log(counts);
+
+  // counts.forEach((element) => {
+  //   // console.log(element.fields);
+  //   // const tempDateBlock = document.createElement("li");
+  //   // tempDateBlock.textContent = "jhell";
+  //   // 
+  //   console.log(element)
+  // })
+
+  for (const [key, value] of Object.entries(counts)) {
+    // console.log(`${key}: ${value}`);
+    // Create an element for each unique month value
+    const tempDateBlock = document.createElement("li");
+    tempDateBlock.dataset.date = `${key}`;
+    // tempDateBlock.textContent = `${key}: ${value}`;
+    tempDateBlock.style.height = `${value * 5}px`;
+    graph.appendChild(tempDateBlock);
+
+  }
+
 }
+
+// Call function
 getData();

@@ -50,15 +50,23 @@ body {
   margin: 0;
 }
 
+// Shared list styling
 ul {
   margin: 0;
   padding: 0;
   display: flex;
+
+  li {
+    list-style-type: none;
+  }
+}
+
+// Style ephemera list
+ul#list {
   flex-wrap: wrap;
   // justify-content: space-evenly;
 
   li {
-    list-style-type: none;
     width: var(--tile-width);
     height: var(--tile-height);
     text-align: center;
@@ -126,4 +134,34 @@ p {
   font-size: 0.8rem;
   margin: 0.3rem 0;
   text-transform: uppercase;
+}
+
+// Style graph list
+ul#graph {
+  justify-content: space-around;
+  margin-left: var(--tile-padding);
+  margin-right: var(--tile-padding);
+  margin-bottom: 4vh;
+
+  li {
+    background-color: black;
+    width: 1px;
+
+    &:hover {
+      background-color: red;
+      position: relative;
+
+      &:after {
+        content: attr(data-date);
+        text-align: center;
+        font-size: 0.66rem;
+        color: red;
+        background: rgba(255, 255, 255, 0.85);
+        top: 100%;
+        margin-top: 0.25rem;
+        transform: translateX(-50%);
+        position: absolute;
+      }
+    }
+  }
 }
