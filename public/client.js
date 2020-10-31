@@ -111,6 +111,8 @@ async function getData() {
   for (const [key, value] of Object.entries(counts)) {
     // Create an element for each unique month value
     const dateColumn = document.createElement("li");
+    // Create an element for the visual line that will go inside the month element
+    const dateColumnLine = document.createElement("div");
     // Set height of each column proportionate to how many instances there are that month
     dateColumn.style.height = `${value * 5}px`;
 
@@ -125,6 +127,8 @@ async function getData() {
     const monthName = formatDate.toLocaleString("default", { month: "short" }).toUpperCase();
     // Set the text for each dateColumn to uppercase month name and year
     dateColumn.dataset.date = `${monthName} ${year}`;
+    // Add dateColumnLine element to each dateColumn
+    dateColumn.appendChild(dateColumnLine);
     // Add each dateColumn element to its parent list container
     graph.appendChild(dateColumn);
 

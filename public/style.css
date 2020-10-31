@@ -94,19 +94,23 @@ ul#graph {
   margin-right: var(--tile-padding);
   margin-bottom: 4vh; }
   ul#graph li {
-    background-color: black;
-    width: 1px; }
+    width: 100%; }
+    ul#graph li div {
+      background-color: black;
+      height: 100%;
+      width: 1px;
+      margin: 0 auto; }
     ul#graph li:hover {
-      background-color: red;
-      position: relative;
-      transition: none; }
+      position: relative; }
+      ul#graph li:hover > div {
+        background-color: red; }
       ul#graph li:hover:after {
         content: attr(data-date);
         text-align: center;
         font-size: 0.66rem;
         color: red;
-        background: rgba(255, 255, 255, 0.85);
+        background: rgba(255, 255, 255, 0.95);
         top: 100%;
         margin-top: 0.5rem;
-        transform: translateX(-50%);
+        transform: translateX(calc(-50% + 2px));
         position: absolute; }
