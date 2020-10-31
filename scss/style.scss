@@ -150,6 +150,7 @@ ul#graph {
     &:hover {
       background-color: red;
       position: relative;
+      transition: none;
 
       &:after {
         content: attr(data-date);
@@ -158,7 +159,7 @@ ul#graph {
         color: red;
         background: rgba(255, 255, 255, 0.85);
         top: 100%;
-        margin-top: 0.25rem;
+        margin-top: 0.5rem;
         transform: translateX(-50%);
         position: absolute;
       }

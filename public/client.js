@@ -25,48 +25,17 @@ async function getData() {
   const elementYears = [];
   // Prepare array for months
   const allYearsAndMonth = [];
-
-  // console.log(json);
-
-  // const test = json.reduce(function (accumulator, current) {
-  //   return accumulator.concat(current);
-  // })
-  // console.log(test);
-
-  // const tempList = json.map(function (date, index, array) {
-  //   console.log(index.fields.date);
-  // });
+  // Prepare object for counting how many items occur per month
   const counts = {};
-
 
   // Go through each item
   json.forEach((element) => {
     // Access year
     const itemYear = element.fields.date.substring(0, 4);
 
+    // Push this element to the graph for later use
     const elementYearAndMonth = element.fields.date.substring(0, 7);
     allYearsAndMonth.push(elementYearAndMonth);
-
-
-    // console.log(allYearsAndMonth);
-
-
-
-
-    // 👇
-    // Get all raw dates
-    // console.log(element.fields.date);
-    // Simplify into months (Sept 18, Oct 18, Nov, 18, Dec 18, Jan 19)
-    // const tempList = 
-    // Count how many 'duplicates' are in each of those months
-    // Use that duplicate number to determine height of li element
-
-    // Scratchpad:
-
-
-
-    // 🖕
-    // Normal stuff:
 
     if (!elementYears.includes(itemYear)) {
       // Make an item
@@ -135,30 +104,31 @@ async function getData() {
     list.appendChild(item);
   });
 
-  // console.log(elementYears);
+  // Build graph at top
   allYearsAndMonth.forEach(function (x) { counts[x] = (counts[x] || 0) + 1 });
-  console.log(counts);
-
-  // counts.forEach((element) => {
-  //   // console.log(element.fields);
-  //   // const tempDateBlock = document.createElement("li");
-  //   // tempDateBlock.textContent = "jhell";
-  //   // 
-  //   console.log(element)
-  // })
-
   for (const [key, value] of Object.entries(counts)) {
-    // console.log(`${key}: ${value}`);
     // Create an element for each unique month value
-    const tempDateBlock = document.createElement("li");
-    tempDateBlock.dataset.date = `${key}`;
-    // tempDateBlock.textContent = `${key}: ${value}`;
-    tempDateBlock.style.height = `${value * 5}px`;
-    graph.appendChild(tempDateBlock);
+    const dateColumn = document.createElement("li");
+    // Set height of each column proportionate to how many instances there are that month
+    dateColumn.style.height = `${value * 5}px`;
+
+    // Turn year and month value into something more readable
+    // Slice the year
+    const year = key.substring(0, 4);
+    // Slice the month
+    const month = key.substring(5, 7);
+    // Format these two values for later month name conversion
+    const formatDate = new Date(year, month);
+    // Programatically change month name
+    const monthName = formatDate.toLocaleString("default", { month: "short" }).toUpperCase();
+    // Set the text for each dateColumn to uppercase month name and year
+    dateColumn.dataset.date = `${monthName} ${year}`;
+    // Add each dateColumn element to its parent list container
+    graph.appendChild(dateColumn);
 
   }
 
 }
 
-// Call function
+// Call main function
 getData();

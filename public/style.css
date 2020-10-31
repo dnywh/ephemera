@@ -98,7 +98,8 @@ ul#graph {
     width: 1px; }
     ul#graph li:hover {
       background-color: red;
-      position: relative; }
+      position: relative;
+      transition: none; }
       ul#graph li:hover:after {
         content: attr(data-date);
         text-align: center;
@@ -106,6 +107,6 @@ ul#graph {
         color: red;
         background: rgba(255, 255, 255, 0.85);
         top: 100%;
-        margin-top: 0.25rem;
+        margin-top: 0.5rem;
         transform: translateX(-50%);
         position: absolute; }
