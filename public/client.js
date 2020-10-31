@@ -126,7 +126,7 @@ async function getData() {
     // Programatically change month name
     const monthName = formatDate.toLocaleString("default", { month: "short" }).toUpperCase();
     // Set the text for each dateColumn to uppercase month name and year
-    dateColumn.dataset.date = `${monthName} ${year}`;
+    dateColumnLine.dataset.date = `${monthName} ${year}`;
     // Add dateColumnLine element to each dateColumn
     dateColumn.appendChild(dateColumnLine);
     // Add each dateColumn element to its parent list container

@@ -145,7 +145,6 @@ ul#graph {
 
   li {
     width: 100%;
-
     // Style inner line
     div {
       background-color: black;
@@ -157,23 +156,21 @@ ul#graph {
     // When the whole list element is hovered...
     &:hover {
       position: relative;
-
       // Style the inner line
       > div {
         background-color: red;
-      }
-
-      // Add the key text
-      &:after {
-        content: attr(data-date);
-        text-align: center;
-        font-size: 0.66rem;
-        color: red;
-        background: rgba(255, 255, 255, 0.95);
-        top: 100%;
-        margin-top: 0.5rem;
-        transform: translateX(calc(-50% + 2px));
-        position: absolute;
+        // Add the key text
+        &:after {
+          content: attr(data-date);
+          text-align: center;
+          font-size: 0.66rem;
+          color: red;
+          background: rgba(255, 255, 255, 0.95);
+          position: absolute;
+          top: 100%;
+          transform: translateX(-50%);
+          margin-top: 0.5rem;
+        }
       }
     }
   }
