@@ -14,6 +14,8 @@ I semi-seriously started collecting and visualising ephemera in 2016. The 2018 [
 
 Check out [ephemera.herokuapp.com](http://ephemera.herokuapp.com/) for deploys from this repo's `master` branch.
 
+Check out [@ephemerabot](https://twitter.com/ephemerabot) on Twitter and its [repository](https://github.com/dnywh/ephemerabot) for some Twitter ←→ Airtable love.
+
 ## How do I make my own?
 
 Follow these instructions if you want to recreate or build something similar using your own Airtable base.
