@@ -120,7 +120,7 @@ async function getData() {
     // Slice the year
     const year = key.substring(0, 4);
     // Slice the month
-    const month = key.substring(5, 7);
+    const month = (key.substring(5, 7) - 1);
     // Format these two values for later month name conversion
     const formatDate = new Date(year, month);
     // Programatically change month name
