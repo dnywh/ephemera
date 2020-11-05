@@ -6,6 +6,8 @@ You know those scraps of paper and receipts that clog up your wallet and pockets
 
 I try to hang on to those scraps, then scan and pop them on an Airtable base. This project serves them up, gallery-style.
 
+Also check out [Ephemerabot](https://github.com/dnywh/ephemerabot) if this tickles your fancy.
+
 ## Inspiration
 
 I semi-seriously started collecting and visualising ephemera in 2016. The 2018 [Below the Surface](https://belowthesurface.amsterdam/en) project in Amsterdam gave me the push to make it a real thing.
