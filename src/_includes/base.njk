@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ephemera">
+    <meta name="author" content="Danny White">
+    <meta property="og:type" content="website">
+    {# <meta property="og:url" content="https://ephemera.herokuapp.com/"> #}
+    <meta property="og:image" content="ephemera.jpg">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>{{ title }}</h1>
+    </header>
+    <main>
+        {{ content | safe }}
+
+        {% if airtableData.length %}
+            {% for item in airtableData %}
+                {{ item | dump }}
+            {% endfor %}
+            {% else %}
+            <p>No data pulled from Airtable</p>
+        {% endif %}
+    </main>
+</body>
+</html>

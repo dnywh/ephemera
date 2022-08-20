@@ -49,3 +49,7 @@ Check that:
 - ...all the Node modules were installed (I'm assuming `npm start` does that, but could be wrong)
 - ...your API key and Base ID are correct
 - ...the `view: "Grid"` part of [client.js]() matches the name of your Airtable base's view
+
+## 2022 Update
+
+- https://jamesdoc.com/blog/2022/11ty-airtable/
