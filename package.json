@@ -1,7 +1,7 @@
 {
   "name": "Ephemera",
   "version": "2.0.0",
-  "description": "A starter repository for a blog web site using the Eleventy static site generator.",
+  "description": "You know those scraps of paper and receipts that clog up your wallet and pockets? This is a living, digital archive of that.",
   "scripts": {
     "build": "npx @11ty/eleventy",
     "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/11ty/eleventy-base-blog.git"
+    "url": "git://github.com/dnywh/ephemera.git"
   },
   "author": {
     "name": "Danny White",
@@ -20,14 +20,13 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/11ty/eleventy-base-blog/issues"
+    "url": "https://github.com/dnywh/ephemera/issues"
   },
-  "homepage": "https://github.com/11ty/eleventy-base-blog#readme",
+  "homepage": "https://ephemera.fyi",
   "dependencies": {
     "@11ty/eleventy": "^1.0.1",
     "@11ty/eleventy-navigation": "^0.3.3",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
     "@netlify/functions": "^1.2.0",
     "airtable": "^0.11.4",
     "dotenv": "^16.0.1",

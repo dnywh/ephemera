@@ -17,4 +17,4 @@ const handler = async function (event, context) {
 };
 
 // Match the cron expression from Ephemerabot
-module.exports.handler = schedule("0 8 * * *", handler);
+module.exports.handler = schedule("0 20 * * *", handler);
