@@ -22,9 +22,21 @@
         {{ content | safe }}
 
         {% if airtableData.length %}
+            <ul>
             {% for item in airtableData %}
-                {{ item | dump }}
+                <li>
+                    <ul>
+                        <li>
+                            <img src="https://res.cloudinary.com/dannywhite/image/upload/q_auto,f_auto,w_320/ephemera/{{ item.imageSlug }}" alt="{{ item.name }}">
+                        </li>
+                        <li>
+                            {{ item | dump }}
+                        </li>
+                    </ul>
+                </li>
+                
             {% endfor %}
+            </ul>
             {% else %}
             <p>No data pulled from Airtable</p>
         {% endif %}

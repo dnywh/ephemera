@@ -53,3 +53,4 @@ Check that:
 ## 2022 Update
 
 - https://jamesdoc.com/blog/2022/11ty-airtable/
+- https://danabyerly.com/articles/using-airtable-with-eleventy/
