@@ -3,12 +3,13 @@
   "version": "2.0.0",
   "description": "You know those scraps of paper and receipts that clog up your wallet and pockets? This is a living, digital archive of that.",
   "scripts": {
-    "build": "npx @11ty/eleventy",
-    "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
-    "watch": "npx @11ty/eleventy --watch",
-    "serve": "npx @11ty/eleventy --serve",
-    "start": "npx @11ty/eleventy --serve",
-    "debug": "DEBUG=* npx @11ty/eleventy"
+    "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
+    "watch:eleventy": "eleventy --serve",
+    "build:sass": "sass  --no-source-map src/sass:public/css",
+    "build:eleventy": "eleventy",
+    "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
+    "start": "npm-run-all build:sass --parallel watch:*",
+    "build": "npm-run-all build:sass build:eleventy"
   },
   "repository": {
     "type": "git",
@@ -25,14 +26,17 @@
   "homepage": "https://ephemera.fyi",
   "dependencies": {
     "@11ty/eleventy": "^1.0.1",
-    "@11ty/eleventy-navigation": "^0.3.3",
-    "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@netlify/functions": "^1.2.0",
     "airtable": "^0.11.4",
     "dotenv": "^16.0.1",
     "luxon": "^2.4.0",
     "markdown-it": "^13.0.1",
-    "markdown-it-anchor": "^8.6.4",
-    "node-fetch": "^3.2.10"
+    "node-fetch": "^3.2.10",
+    "autoprefixer": "^10.4.2",
+    "cssnano": "^5.0.17",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.6",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.49.7"
   }
 }

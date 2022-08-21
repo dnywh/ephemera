@@ -54,3 +54,6 @@ Check that:
 
 - https://jamesdoc.com/blog/2022/11ty-airtable/
 - https://danabyerly.com/articles/using-airtable-with-eleventy/
+- 11ty Sass Skeleton by @5t3ph
+
+- [ ] CSS Reset

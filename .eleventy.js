@@ -1,5 +1,5 @@
 module.exports = function (config) {
-    config.addPassthroughCopy("./src/style.css")
+    config.addWatchTarget("./src/sass/");
     // Set which directories Eleventy reads from and writes to
     return {
         dir: {
