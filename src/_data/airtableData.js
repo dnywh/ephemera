@@ -4,7 +4,7 @@
 require('dotenv').config();
 const { AssetCache } = require("@11ty/eleventy-cache-assets");
 const Airtable = require('airtable');
-let base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appkVt19sIZBsFpND');
+let base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(process.env.AIRTABLE_BASE_ID);
 
 const assetCacheId = "airtableCMS";
 
