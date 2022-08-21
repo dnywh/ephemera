@@ -5,6 +5,7 @@
 package-lock.json
 node_modules
 /public
+package-lock.json
+.cache
 # Local Netlify folder
 .netlify
-package-lock.json
