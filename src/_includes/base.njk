@@ -12,33 +12,25 @@
     {# <meta property="og:url" content="https://ephemera.herokuapp.com/"> #}
     <meta property="og:image" content="ephemera.jpg">
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ '/css/style.css' | url }}" />
 </head>
 <body>
-    <header>
-        <h1>{{ title }}</h1>
-    </header>
-    <main>
-        {{ content | safe }}
-
-        {% if airtableData.length %}
-            <ul>
-            {% for item in airtableData %}
-                <li>
-                    <ul>
-                        <li>
-                            <img src="https://res.cloudinary.com/dannywhite/image/upload/q_auto,f_auto,w_320/ephemera/{{ item.imageSlug }}" alt="{{ item.name }}">
-                        </li>
-                        <li>{{ item.name }}, {{ item.date }}</li>
-                        {# <li>{{ item | dump }}</li> #}
-                    </ul>
-                </li>
-                
-            {% endfor %}
-            </ul>
-            {% else %}
-            <p>No data pulled from Airtable</p>
-        {% endif %}
-    </main>
+    {# {{ content | safe }} #}
+    {% if airtableData.length %}
+    <ul id="list">
+    {% for item in airtableData %}
+        {# <li>{{ item | dump }}</li> #}
+        <li>
+            <div id="item-foreground">
+                <p>{{ item.date }}</p>
+                <p>{{ item.location }}</p>
+            </div>
+            <img src="https://res.cloudinary.com/dannywhite/image/upload/q_auto,f_auto,w_320/ephemera/{{ item.imageSlug }}" alt="{{ item.name }}">
+        </li>            
+    {% endfor %}
+    </ul>
+    {% else %}
+    <p>No data pulled from Airtable</p>
+    {% endif %}
 </body>
 </html>

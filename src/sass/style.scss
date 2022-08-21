@@ -1,0 +1,172 @@
+// Variables
+$breakpoint-tablet: 768px;
+$transition-style: 0.3s ease;
+
+:root {
+  /* Set width by % as vw doesn't account for scrollbars */
+  --tile-width: 50%;
+  /* Height should be fixed at roughly 1:1 (square) with width */
+  --tile-height: 50vw;
+  --tile-padding: 2vw;
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+  :root {
+    --tile-width: 25%;
+    --tile-height: 25vw;
+    --tile-padding: 4vw;
+  }
+}
+// Fonts
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/webfonts/JetBrainsMono-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/webfonts/JetBrainsMono-Bold.woff2")
+    format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-feature-settings: "liga" on, "calt" on;
+  -webkit-font-feature-settings: "liga" on, "calt" on;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: "JetBrains Mono", Menlo, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+
+  box-sizing: border-box;
+  transition: all $transition-style;
+}
+
+body {
+  margin: 0;
+}
+
+// Shared list styling
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+  li {
+    list-style-type: none;
+  }
+}
+
+// Style ephemera list
+ul#list {
+  flex-wrap: wrap;
+  // justify-content: space-evenly;
+
+  li {
+    width: var(--tile-width);
+    height: var(--tile-height);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    // &:not(.year-block) {
+    //   cursor: pointer;
+    // }
+
+    img,
+    div {
+      padding: var(--tile-padding);
+    }
+
+    img {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+
+      //   &.lazyload {
+      //     opacity: 0;
+      //   }
+      //   &.lazyloading {
+      //     filter: blur(12px);
+      //     opacity: 1;
+      //   }
+      //   &.lazyloaded {
+      //     filter: blur(0);
+      //   }
+    }
+
+    div {
+      position: absolute;
+      width: var(--tile-width);
+      height: var(--tile-height);
+      padding: var(--tile-padding);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.99);
+      opacity: 0;
+    }
+
+    &:hover {
+      div {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+h2 {
+  font-size: 4vw;
+}
+
+p {
+  font-size: 0.8rem;
+  margin: 0.3rem 0;
+  text-transform: uppercase;
+}
+
+// Style graph list
+ul#graph {
+  justify-content: space-around;
+  margin-left: var(--tile-padding);
+  margin-right: var(--tile-padding);
+  margin-bottom: 4vh;
+
+  li {
+    width: 100%;
+    // Style inner line
+    div {
+      background-color: black;
+      height: 100%;
+      width: 1px;
+      margin: 0 auto;
+    }
+
+    // When the whole list element is hovered...
+    &:hover {
+      position: relative;
+      // Style the inner line
+      > div {
+        background-color: red;
+        // Add the key text
+        &:after {
+          content: attr(data-date);
+          text-align: center;
+          font-size: 0.66rem;
+          color: red;
+          background: rgba(255, 255, 255, 0.95);
+          position: absolute;
+          top: 100%;
+          transform: translateX(-50%);
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+}
