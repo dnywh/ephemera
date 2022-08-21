@@ -18,9 +18,13 @@ module.exports = () => {
 
   // The 11ty cache is cold… so we need to talk to Airtable
   return new Promise((resolve, reject) => {
-    let allDatasets = []; // change 'allDatasets' to something more relevant to your project
-    base('Main') // change 'New' to your base name
-      .select({ view: 'Grid' }) // change 'All' to your view name
+    let allDatasets = [];
+    base('Main')
+      .select({
+        view: "Grid",
+        filterByFormula: "({hidden}= '')", // Only show items that are not hidden
+        sort: [{ field: "date", direction: "desc" }], // Overrides what's set in the above view, just in case I forget
+      })
       .eachPage(
         function page(records, fetchNextPage) {
           records.forEach((record) => {
@@ -29,6 +33,9 @@ module.exports = () => {
               ...record._rawJson.fields
             });
           });
+          // To fetch the next page of records, call `fetchNextPage`.
+          // If there are more records, `page` will get called again.
+          // If there are no more records, `done` will get called.
           fetchNextPage();
         },
         function done(err) {
