@@ -60,3 +60,7 @@ Check that:
 ## Todo
 
 - [ ] CSS Reset
+
+## Clearing the cache
+
+Just delete the _.cache_ directory.

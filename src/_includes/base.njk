@@ -26,22 +26,15 @@
                 <p>{{ item.date }}</p>
                 <p>{{ item.location }}</p>
             </div>
-            {% if item.imageSlug %}
-            {# <img src="https://res.cloudinary.com/dannywhite/image/upload/q_auto,f_auto,w_320/ephemera/{{ item.imageSlug }}" alt="{{ item.name }}"> #}
             <img src="{% src item.imageSlug %}"
                 srcset="{% srcset item.imageSlug %}"
                 alt="{{ item.name }}"
                 loading="lazy">
-            {% else %}
-            {# Fallback to Airtable API for image storage #}
-            {# Must be removed by November 8, 2022 #}
-            <img src="{{ item.images[0].thumbnails.large.url }}" alt="{{ item.name }}" loading="lazy">
-            {% endif %}
         </li>            
     {% endfor %}
     </ul>
     {% else %}
-    <p>No data pulled from Airtable</p>
+    <p>Oh dear. Something's gone wrong... No scraps of ephemera have been pulled from Airtable.</p>
     {% endif %}
 </body>
 </html>
