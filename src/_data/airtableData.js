@@ -1,10 +1,11 @@
 // https://danabyerly.com/articles/using-airtable-with-eleventy/
 // https://jamesdoc.com/blog/2022/11ty-airtable/
+// https://www.cassey.dev/11ty-airtable-fetch/
+// https://www.11ty.dev/docs/plugins/fetch/#manually-store-your-own-data-in-the-cache
 
-require('dotenv').config();
-const { AssetCache } = require("@11ty/eleventy-cache-assets");
+const { AssetCache } = require("@11ty/eleventy-fetch");
 const Airtable = require('airtable');
-let base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(process.env.AIRTABLE_BASE_ID);
+let base = new Airtable({ apiKey: process.env.AIRTABLE_ACCESS_TOKEN }).base(process.env.AIRTABLE_BASE_ID);
 
 const assetCacheId = "airtableCMS";
 

@@ -1,12 +1,14 @@
 // Shortcodes
 const { srcset, src } = require("./src/helpers/shortcodes");
+// Import dotenv so I can use custom environment variables, such as the Airtable API key
+require('dotenv').config();
 
-module.exports = function (config) {
-    config.addWatchTarget("./src/sass/");
+module.exports = function (eleventyConfig) {
+    eleventyConfig.addWatchTarget("./src/sass/");
 
     // Image shortcodes from helpers/shortcodes.js
-    config.addShortcode("src", src);
-    config.addShortcode("srcset", srcset);
+    eleventyConfig.addShortcode("src", src);
+    eleventyConfig.addShortcode("srcset", srcset);
 
     // Set which directories Eleventy reads from and writes to
     return {
