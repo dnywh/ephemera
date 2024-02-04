@@ -27,7 +27,7 @@ Follow these instructions if you want to recreate or build something similar usi
 [Here](https://airtable.com/shr1HFbqpH0axgEb6) is an example Airtable base you can use to get started. It contains the expected field names and a few example records.
 
 1. Make your own copy of the above Airtable base.
-2. View the [Airtable API page](https://airtable.com/api) to get your API key and base ID.
+2. View the [Airtable API page](https://airtable.com/api) to get your access token and base ID.
 3. Keep these two values handy for the next steps.
 
 ### 2. Run locally with your own Airtable data
@@ -35,7 +35,7 @@ Follow these instructions if you want to recreate or build something similar usi
 1. Clone this repository.
 2. `cd` into the respository folder.
 3. Create a file called _.env_ and enter the two variables shown in [.env.example](https://github.com/dnywh/ephemera/blob/main/.env.example)
-4. Add your Airtable API key and base ID as the respective values to your two new variables in _.env_.
+4. Add your Airtable access token and base ID as the respective values to your two new variables in _.env_.
 5. Run `npm install` to get all the modules in here.
 6. Run `npm start` to start the local server.
 
@@ -46,21 +46,14 @@ Your [localhost:8080](http://localhost:8080) should now be serving Ephemera.
 Check that:
 
 - ...all packages were installed via `npm install`
-- ...your API key and Base ID are correct
+- ...your access token and base ID are correct
 - ...the `view: "Grid"` part of [airtableData.js](https://github.com/dnywh/ephemera/blob/main/src/_data/airtableData.js) matches the name of your Airtable base's view
 
 ## Credits
 
+- https://www.cassey.dev/11ty-airtable-fetch/#saving-cached-records
 - https://jamesdoc.com/blog/2022/11ty-airtable/
   - @11ty/eleventy-cache-assets
 - https://danabyerly.com/articles/using-airtable-with-eleventy/
 - 11ty Sass Skeleton by @5t3ph
 - https://sia.codes/posts/eleventy-and-cloudinary-images/
-
-## Todo
-
-- [ ] CSS Reset
-
-## Clearing the cache
-
-Just delete the _.cache_ directory.
